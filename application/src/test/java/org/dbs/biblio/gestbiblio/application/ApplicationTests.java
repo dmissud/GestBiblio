@@ -1,13 +1,6 @@
 package org.dbs.biblio.gestbiblio.application;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
+import io.cucumber.spring.CucumberContextConfiguration;
+@CucumberContextConfiguration
 class ApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
 }
