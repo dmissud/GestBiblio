@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="258.5208333333337" y="1.5416666666666856">cucumber.steps.EmpruntRepositoryStub</node>
+    <node x="-471.8124999999997" y="-90.29166666666669">cucumber.steps.EmpruntSteps</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cucumber.steps.EmpruntSteps" target="cucumber.steps.EmpruntRepositoryStub" relationship="CREATE">
+      <point x="244.0" y="0.0" />
+      <point x="228.0208333333337" y="14.708333333333314" />
+      <point x="228.0208333333337" y="44.041666666666686" />
+      <point x="-163.0" y="0.0" />
+    </edge>
+    <edge source="cucumber.steps.EmpruntSteps" target="cucumber.steps.EmpruntRepositoryStub" relationship="TO_ONE">
+      <point x="244.0" y="15.0" />
+      <point x="-84.31249999999955" y="29.708333333333314" />
+      <point x="-84.31249999999955" y="207.04166666666663" />
+      <point x="350.68750000000045" y="207.04166666666663" />
+      <point x="350.68750000000045" y="59.041666666666686" />
+      <point x="-163.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="true" x="56.5" y="58.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
