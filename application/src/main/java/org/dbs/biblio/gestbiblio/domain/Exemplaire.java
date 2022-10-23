@@ -1,17 +1,25 @@
 package org.dbs.biblio.gestbiblio.domain;
 
-import lombok.Builder;
-
-@Builder
 public class Exemplaire {
     private Livre livre;
     private String identifiant;
+    private Boolean available;
 
-    public boolean isDisponible() {
-        return false;
+    public Exemplaire(Livre livre, String identifiant) {
+        this.livre = livre;
+        this.identifiant = identifiant;
+        this.available = true;
+    }
+
+    public boolean isAvailable() {
+        return available;
     }
 
     public boolean is(String idExemplaire) {
-        return false;
+        return this.identifiant.equals(idExemplaire);
+    }
+
+    public void noMoreAvailable() {
+        this.available = false;
     }
 }
