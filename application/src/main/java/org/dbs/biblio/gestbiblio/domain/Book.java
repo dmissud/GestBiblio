@@ -1,10 +1,11 @@
 package org.dbs.biblio.gestbiblio.domain;
 
-import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder
-public class Livre {
-    private String isbn10;
+@Getter
+@Setter
+public class Book {
     private String isbn13;
     private String titre;
 }
