@@ -42,6 +42,7 @@
         <junit.jupiter.version>5.9.0</junit.jupiter.version>
         <jackson.version>2.13.4</jackson.version>
         <snakeyaml.version>1.33</snakeyaml.version>
+        <spring-shell.version>2.1.2</spring-shell.version>
         <spring-boot.version>2.7.4</spring-boot.version>
         <sonar.organization>dmissud</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -52,6 +53,8 @@
     <!-- =============================================================== -->
     <modules>
         <module>application</module>
+        <module>infrastructure</module>
+        <module>lignecmd</module>
         <module>configuration</module>
     </modules>
 
@@ -60,6 +63,22 @@
     <!-- =============================================================== -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>lignecmd</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-bom</artifactId>
@@ -120,13 +139,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
     <build>
         <pluginManagement>
