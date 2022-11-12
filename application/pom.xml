@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.dbs.biblio</groupId>
+        <groupId>org.dbs.biblioEntity</groupId>
         <artifactId>GestBiblio</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -74,6 +74,9 @@
                             cucumber.junit-platform.naming-strategy=long
                         </configurationParameters>
                     </properties>
+                    <environmentVariables>
+                        <CUCUMBER_PUBLISH_TOKEN>f4671b04-7a34-4847-8f0c-a8b9c8da31a4</CUCUMBER_PUBLISH_TOKEN>
+                    </environmentVariables>
                 </configuration>
             </plugin>
         </plugins>

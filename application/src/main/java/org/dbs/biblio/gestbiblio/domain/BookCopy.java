@@ -1,12 +1,12 @@
 package org.dbs.biblio.gestbiblio.domain;
 
-public class Exemplaire {
-    private Livre livre;
-    private String identifiant;
+public class BookCopy {
+    private final Book book;
+    private final String identifiant;
     private Boolean available;
 
-    public Exemplaire(Livre livre, String identifiant) {
-        this.livre = livre;
+    public BookCopy(Book book, String identifiant) {
+        this.book = book;
         this.identifiant = identifiant;
         this.available = true;
     }
@@ -15,8 +15,8 @@ public class Exemplaire {
         return available;
     }
 
-    public boolean is(String idExemplaire) {
-        return this.identifiant.equals(idExemplaire);
+    public boolean is(String idCopy) {
+        return this.identifiant.equals(idCopy);
     }
 
     public void noMoreAvailable() {
