@@ -1,16 +1,16 @@
 @startmindmap
 * US 1
 ** En tant que documentaliste
-** je souhaite prendre en comte un emprunt
+** je souhaite prendre en comte un borrow
 ** afin de pouvoir avoir un stock maitrisé pour les adhérent
 ** Condition acceptation
-*** l'emprunt est défini et référencé pour l'adhérent et l'ouvrage
-*** l'exemplaire de l'ouvrage n'est plus disponible
+*** l'borrow est défini et référencé pour l'adhérent et l'ouvrage
+*** l'bookCopy de l'ouvrage n'est plus disponible
 * US 2
 ** En tant que documentaliste
 ** je souhaite prendre en comte un retour
 ** afin de pouvoir avoir un stock maitrisé pour les adhérent
 ** Condition acceptation
-*** l'emprunt est cloturé  pour l'adhérent et l'ouvrage
-*** l'exemplaire de l'ouvrage est disponible
+*** l'borrow est cloturé  pour l'adhérent et l'ouvrage
+*** l'bookCopy de l'ouvrage est disponible
 @endmindmap
