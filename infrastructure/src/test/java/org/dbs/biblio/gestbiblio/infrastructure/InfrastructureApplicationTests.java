@@ -1,10 +1,10 @@
-package org.dbs.gestbiblio.configuration;
+package org.dbs.biblio.gestbiblio.infrastructure;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
-class ConfigurationApplicationTests {
+class InfrastructureApplicationTests {
 
 //    @Test
     void contextLoads() {

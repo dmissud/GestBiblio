@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1668267778837-1" author="daniel (generated)">
+        <createTable tableName="biblio_entity">
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_biblioentity"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="last_copy_book_identifiant" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1668267778837-2" author="daniel (generated)">
+        <createTable tableName="book_copy_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_bookcopyentity"/>
+            </column>
+            <column name="available" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="identifiant" type="VARCHAR(255)"/>
+            <column name="book_entity_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1668267778837-3" author="daniel (generated)">
+        <createTable tableName="book_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_book_entity"/>
+            </column>
+            <column name="isbn13" type="VARCHAR(255)"/>
+            <column name="titre" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1668267778837-4" author="daniel (generated)">
+        <createTable tableName="book_entity_book_copy_entities">
+            <column name="book_entity_id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_book_entity_bookcopyentities"/>
+            </column>
+            <column name="book_copy_entities_id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_book_entity_bookcopyentities"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1668267778837-5" author="daniel (generated)">
+        <createTable tableName="isbn_entity">
+            <column name="isbn13" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_isbnentity"/>
+            </column>
+            <column name="titre" type="VARCHAR(255)"/>
+            <column name="auteur" type="VARCHAR(255)"/>
+            <column name="editeur" type="VARCHAR(255)"/>
+            <column name="date" type="VARCHAR(255)"/>
+            <column name="langue" type="VARCHAR(255)"/>
+            <column name="prix" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1668267778837-6" author="daniel (generated)">
+        <addUniqueConstraint columnNames="book_copy_entities_id"
+                             constraintName="uc_book_entity_book_copy_entities_bookcopyentities"
+                             tableName="book_entity_book_copy_entities"/>
+    </changeSet>
+    <changeSet id="1668267778837-7" author="daniel (generated)">
+        <addUniqueConstraint columnNames="identifiant" constraintName="uc_bookcopyentity_identifiant"
+                             tableName="book_copy_entity"/>
+    </changeSet>
+    <changeSet id="1668267778837-8" author="daniel (generated)">
+        <createIndex indexName="isbn_idx" tableName="book_entity" unique="true">
+            <column name="isbn13"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="1668267778837-9" author="daniel (generated)">
+        <addForeignKeyConstraint baseColumnNames="book_entity_id" baseTableName="book_copy_entity"
+                                 constraintName="FK_BOOKCOPYENTITY_ON_BOOK_ENTITY" referencedColumnNames="id"
+                                 referencedTableName="book_entity"/>
+    </changeSet>
+    <changeSet id="1668267778837-10" author="daniel (generated)">
+        <addForeignKeyConstraint baseColumnNames="book_copy_entities_id" baseTableName="book_entity_book_copy_entities"
+                                 constraintName="fk_booentboocopent_on_book_copy_entity" referencedColumnNames="id"
+                                 referencedTableName="book_copy_entity"/>
+    </changeSet>
+    <changeSet id="1668267778837-11" author="daniel (generated)">
+        <addForeignKeyConstraint baseColumnNames="book_entity_id" baseTableName="book_entity_book_copy_entities"
+                                 constraintName="fk_booentboocopent_on_book_entity" referencedColumnNames="id"
+                                 referencedTableName="book_entity"/>
+    </changeSet>
+
+</databaseChangeLog>

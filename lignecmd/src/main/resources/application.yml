@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: GestBiblio
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        generate_statistics: false
+  datasource:
+    url: jdbc:postgresql://${BIBLIO_DB_GESTBIBLIO_SERVICE_HOST}:${BIBLIO_DB_GESTBIBLIO_SERVICE_PORT}/${BIBLIO_DB_GESTBIBLIO_POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driverClassName: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      login-timeout: 30000
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  sql:
+    init:
+      platform: postgres
+      mode: never
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true
+

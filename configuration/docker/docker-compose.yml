@@ -1,0 +1,17 @@
+version: '3'
+services:
+  biblio-db-gestbiblio:
+    image: postgres
+    container_name: biblio-db
+    volumes:
+      - biblio_data:/var/lib/postgresql/data
+    ports:
+      - "5436:5432"
+    environment:
+      - POSTGRES_DB=db_biblio
+      - POSTGRES_USER=biblio_users
+      - POSTGRES_PASSWORD=biblio_pasword
+
+
+volumes:
+  biblio_data:

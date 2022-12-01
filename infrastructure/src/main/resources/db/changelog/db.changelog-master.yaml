@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: "db/changelog/2022/11/12-01-changelog.xml"
+  - include:
+      file: "db/changelog/data/isbn/isbn-load.xml"
+  - include:
+      file: "db/changelog/data/biblio/biblio-load.xml"

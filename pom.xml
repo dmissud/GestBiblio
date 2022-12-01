@@ -8,7 +8,7 @@
     <!-- Informations du projet -->
     <!-- =============================================================== -->
     <!-- ===== Informations Maven ===== -->
-    <groupId>org.dbs.biblio</groupId>
+    <groupId>org.dbs.biblioEntity</groupId>
     <artifactId>GestBiblio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -42,6 +42,7 @@
         <junit.jupiter.version>5.9.0</junit.jupiter.version>
         <jackson.version>2.13.4</jackson.version>
         <snakeyaml.version>1.33</snakeyaml.version>
+        <spring-shell.version>2.1.2</spring-shell.version>
     </properties>
 
     <!-- =============================================================== -->
@@ -49,6 +50,8 @@
     <!-- =============================================================== -->
     <modules>
         <module>application</module>
+        <module>infrastructure</module>
+        <module>lignecmd</module>
         <module>configuration</module>
     </modules>
 
@@ -57,6 +60,22 @@
     <!-- =============================================================== -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dbs.biblioEntity</groupId>
+                <artifactId>lignecmd</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>io.cucumber</groupId>
                 <artifactId>cucumber-bom</artifactId>
@@ -117,13 +136,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
     <build>
         <pluginManagement>
