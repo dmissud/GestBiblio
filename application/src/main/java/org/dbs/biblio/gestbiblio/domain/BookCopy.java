@@ -22,4 +22,8 @@ public class BookCopy {
     public void noMoreAvailable() {
         this.available = false;
     }
+
+    public String giveDescription() {
+        return identifiant+" of "+book.getTitre();
+    }
 }

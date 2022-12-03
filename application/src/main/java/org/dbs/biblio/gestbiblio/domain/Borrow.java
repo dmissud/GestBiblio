@@ -18,4 +18,10 @@ public class Borrow {
     public boolean isBy(String idAdherent) {
         return this.adherent.is(idAdherent);
     }
+
+    public String giveNameOfMember() { return adherent.fullName();}
+
+    public String giveCopyBookDescription() {
+        return bookCopy.giveDescription();
+    }
 }

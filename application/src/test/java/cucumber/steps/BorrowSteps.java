@@ -7,13 +7,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.dbs.biblio.gestbiblio.application.port.in.ConsiderBorrowingABook;
-import org.dbs.biblio.gestbiblio.application.port.out.MemberRepository;
 import org.dbs.biblio.gestbiblio.application.port.out.BorrowRepository;
 import org.dbs.biblio.gestbiblio.application.port.out.CopyRepository;
+import org.dbs.biblio.gestbiblio.application.port.out.MemberRepository;
 import org.dbs.biblio.gestbiblio.application.service.BorrowService;
 import org.dbs.biblio.gestbiblio.domain.Book;
-import org.dbs.biblio.gestbiblio.domain.Member;
 import org.dbs.biblio.gestbiblio.domain.BookCopy;
+import org.dbs.biblio.gestbiblio.domain.Member;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -50,7 +50,7 @@ public class BorrowSteps {
         this.closeable.close();
     }
 
-    @Given("L'exemplaire avec le code {string} est disponible")
+    @Given("l'exemplaire avec le code {string} est disponible")
     public void l_exemplaire_avec_le_code_est_disponible(String identifiant) {
         this.bookCopy = new BookCopy(new Book(), identifiant);
 
@@ -59,7 +59,7 @@ public class BorrowSteps {
                 .thenReturn(this.bookCopy);
     }
 
-    @Given("L'adherent {string} est connue de la Bibliotheque")
+    @Given("l'adherent {string} est connue de la Bibliotheque")
     public void l_adherent_est_connue_de_la_bibliotheque(String identifiant) {
         this.member = new Member(identifiant, "Jhon", "Doe");
         Mockito
@@ -83,9 +83,10 @@ public class BorrowSteps {
         assertThat(this.member.aEmprunte(idExemplaire)).isTrue();
     }
 
-    @And("l exemplaire {string} n est plus disponible")
+    @And("l'exemplaire {string} n'est plus disponible")
     public void lExemplaireNEstPlusDisponible(String idExemplaire) {
         assertThat(this.bookCopy.is(idExemplaire)).isTrue();
         assertThat(this.bookCopy.isAvailable()).isFalse();
     }
+
 }

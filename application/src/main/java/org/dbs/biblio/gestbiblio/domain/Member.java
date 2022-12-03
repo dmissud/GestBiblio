@@ -1,5 +1,7 @@
 package org.dbs.biblio.gestbiblio.domain;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,5 +29,9 @@ public class Member {
 
     public void haveDo(Borrow borrow) {
         this.borrows.add(borrow);
+    }
+
+    public String fullName() {
+        return name+" "+firstName;
     }
 }
