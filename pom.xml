@@ -64,17 +64,17 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.dbs.biblioEntity</groupId>
+                <groupId>org.dbs.biblio</groupId>
                 <artifactId>application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.dbs.biblioEntity</groupId>
+                <groupId>org.dbs.biblio</groupId>
                 <artifactId>infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.dbs.biblioEntity</groupId>
+                <groupId>org.dbs.biblio</groupId>
                 <artifactId>lignecmd</artifactId>
                 <version>${project.version}</version>
             </dependency>
