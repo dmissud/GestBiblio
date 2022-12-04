@@ -44,6 +44,7 @@
         <snakeyaml.version>1.33</snakeyaml.version>
         <spring-shell.version>2.1.2</spring-shell.version>
         <spring-boot.version>2.7.4</spring-boot.version>
+        <sonar.projectKey>dmissud_GestBiblio</sonar.projectKey>
         <sonar.organization>dmissud</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
@@ -185,21 +186,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.3.0.603</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sonar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
-
 </project>
