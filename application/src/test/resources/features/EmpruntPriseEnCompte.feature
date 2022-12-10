@@ -9,3 +9,8 @@
       And l'exemplaire "EX00001" n'est plus disponible
       And l'adherent "AD00001" a emprunte "EX00001"
 
+    Scenario: Il n'est pas possible d'emprunter un exemplaire d'ouvrage indisponible par un adherent inscrit
+      Given l'exemplaire avec le code "EX00001" est indisponible
+      Given l'adherent "AD00001" est connue de la Bibliotheque
+      When l'adherent "AD00001"  umprunte l'exemplaire "EX00001"
+      Then L'emprunt est impossible

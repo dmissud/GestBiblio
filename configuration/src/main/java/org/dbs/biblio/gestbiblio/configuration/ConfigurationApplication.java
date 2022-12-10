@@ -46,7 +46,5 @@ public class ConfigurationApplication {
                 protocol, serverPort, contextPath,
                 protocol, hostAddress, serverPort, contextPath,
                 environment.getActiveProfiles());
-
     }
-
 }

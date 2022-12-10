@@ -32,8 +32,7 @@ public class BorrowService implements ConsiderBorrowingABook {
     public void considerBorrowingABook(CreateBorrowCmd createBorrowCmd) {
         Member member = memberRepository.findMemberByIdent(createBorrowCmd.getIdMember());
         BookCopy bookCopy = copyRepository.findCopyByIdent(createBorrowCmd.getIdCopy());
-        Borrow borrow = new Borrow(member, bookCopy);
+        Borrow borrow = Borrow.borrowABook(member, bookCopy);
         borrowRepository.storeBorrow(borrow);
-        log.trace("Borrow of bookCopy {} by {}", borrow.giveCopyBookDescription(), borrow.giveNameOfMember());
     }
 }

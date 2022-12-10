@@ -12,6 +12,7 @@ public class BorrowRepositoryStub implements BorrowRepository {
     public void storeBorrow(Borrow borrow) {
         this.borrow = borrow;
     }
+
     public boolean disposeOfEmprunt(String idAdherent, String idExemplaire) {
         if (borrow != null) {
             return (borrow.isBy(idAdherent) && borrow.isOn(idExemplaire));

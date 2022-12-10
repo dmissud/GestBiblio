@@ -26,4 +26,5 @@ public class BookCopy {
     public String giveDescription() {
         return identifiant+" of "+book.getTitre();
     }
+
 }
