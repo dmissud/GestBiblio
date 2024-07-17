@@ -1,0 +1,15 @@
+version: '3'
+services:
+  biblio-db-data:
+    image: postgres
+    container_name: stock-db
+    volumes:
+      - biblio_stock:/var/lib/postgresql/stock
+    ports:
+      - "5438:5432"
+    environment:
+      - POSTGRES_DB=db_stock
+      - POSTGRES_USER=stock_users
+      - POSTGRES_PASSWORD=stock_pasword
+volumes:
+  biblio_stock:
