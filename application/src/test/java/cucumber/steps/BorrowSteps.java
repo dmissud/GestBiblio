@@ -6,15 +6,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.dbs.biblio.gestbiblio.application.port.in.ConsiderBorrowingABook;
-import org.dbs.biblio.gestbiblio.application.port.out.BorrowRepository;
-import org.dbs.biblio.gestbiblio.application.port.out.CopyRepository;
-import org.dbs.biblio.gestbiblio.application.port.out.MemberRepository;
 import org.dbs.biblio.gestbiblio.application.service.BorrowService;
 import org.dbs.biblio.gestbiblio.domain.Book;
 import org.dbs.biblio.gestbiblio.domain.BookCopy;
 import org.dbs.biblio.gestbiblio.domain.Member;
 import org.dbs.biblio.gestbiblio.domain.exeception.BusinessException;
+import org.dbs.biblio.gestbiblio.port.in.ConsiderBorrowingABook;
+import org.dbs.biblio.gestbiblio.port.out.BorrowRepository;
+import org.dbs.biblio.gestbiblio.port.out.CopyRepository;
+import org.dbs.biblio.gestbiblio.port.out.MemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -37,7 +37,10 @@ public class BorrowSteps {
     private BookCopy bookCopy;
     private Member member;
 
-    public BorrowSteps(@Qualifier("BorrowRepositoryStub") BorrowRepository borrowRepository, MemberRepository memberRepository, CopyRepository copyRepository, BorrowService borrowService) {
+    public BorrowSteps(@Qualifier("BorrowRepositoryStub") BorrowRepository borrowRepository,
+                       MemberRepository memberRepository,
+                       CopyRepository copyRepository,
+                       BorrowService borrowService) {
         this.borrowRepository = borrowRepository;
         this.memberRepository = memberRepository;
         this.copyRepository = copyRepository;
@@ -78,7 +81,10 @@ public class BorrowSteps {
     @When("l'adherent {string}  umprunte l'exemplaire {string}")
     public void l_adherent_umprunte_l_exemplaire(String idAdherent, String idExemplaire) {
         try {
-            borrowService.considerBorrowingABook(new ConsiderBorrowingABook.CreateBorrowCmd(idAdherent, idExemplaire));
+            borrowService.considerBorrowingABook(ConsiderBorrowingABook.CreateBorrowCmd.builder()
+                    .idCopy(idExemplaire)
+                    .idMember(idAdherent)
+                    .build());
         } catch (BusinessException businessException) {
             this.businessException = businessException;
         }
@@ -92,7 +98,7 @@ public class BorrowSteps {
     @And("l'adherent {string} a emprunte {string}")
     public void lAdherentAEmprunte(String idAdherent, String idExemplaire) {
         assertThat(this.member.is(idAdherent)).isTrue();
-        assertThat(this.member.aEmprunte(idExemplaire)).isTrue();
+        assertThat(this.member.borrowed(idExemplaire)).isTrue();
     }
 
     @And("l'exemplaire {string} n'est plus disponible")

@@ -1,7 +1,7 @@
 package org.dbs.biblio.gestbiblio;
 
-import org.dbs.biblio.gestbiblio.application.port.out.MemberRepository;
-import org.dbs.biblio.gestbiblio.application.port.out.CopyRepository;
+import org.dbs.biblio.gestbiblio.port.out.CopyRepository;
+import org.dbs.biblio.gestbiblio.port.out.MemberRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.mock.mockito.MockBean;

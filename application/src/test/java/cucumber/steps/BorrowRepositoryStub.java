@@ -1,7 +1,7 @@
 package cucumber.steps;
 
-import org.dbs.biblio.gestbiblio.application.port.out.BorrowRepository;
 import org.dbs.biblio.gestbiblio.domain.Borrow;
+import org.dbs.biblio.gestbiblio.port.out.BorrowRepository;
 import org.springframework.stereotype.Component;
 
 @Component("BorrowRepositoryStub")

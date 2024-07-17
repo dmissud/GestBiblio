@@ -1,7 +1,5 @@
 package org.dbs.biblio.gestbiblio.domain;
 
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class Member {
         this.borrows = new ArrayList<>();
     }
 
-    public boolean aEmprunte(String idExemplaire) {
+    public boolean borrowed(String idExemplaire) {
         return this.borrows.stream()
                 .anyMatch(emprunt -> emprunt.isOn(idExemplaire));
     }
