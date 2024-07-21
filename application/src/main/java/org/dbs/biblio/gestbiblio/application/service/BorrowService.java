@@ -29,7 +29,7 @@ public class BorrowService implements ConsiderBorrowingABook {
     }
 
     @Override
-    public void considerBorrowingABook(CreateBorrowCmd createBorrowCmd) {
+    public Borrow considerBorrowingABook(CreateBorrowCmd createBorrowCmd) {
         Member member = memberRepository.findMemberByIdent(createBorrowCmd.getIdMember());
         BookCopy bookCopy = copyRepository.findCopyByIdent(createBorrowCmd.getIdCopy());
 
@@ -39,5 +39,7 @@ public class BorrowService implements ConsiderBorrowingABook {
                 .build();
 
         borrowRepository.storeBorrow(borrow);
+
+        return borrow;
     }
 }

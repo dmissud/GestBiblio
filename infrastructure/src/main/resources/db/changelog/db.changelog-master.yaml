@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: "db/changelog/2022/11/12-01-changelog.xml"
+      file: "db/changelog/2024/07/21-01-changelog.yaml"
   - include:
       file: "db/changelog/data/isbn/isbn-load.xml"
   - include:

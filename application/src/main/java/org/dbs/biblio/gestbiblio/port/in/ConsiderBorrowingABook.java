@@ -3,12 +3,13 @@ package org.dbs.biblio.gestbiblio.port.in;
 import lombok.Builder;
 import lombok.Getter;
 import org.dbs.biblio.gestbiblio.application.common.SelfValidating;
+import org.dbs.biblio.gestbiblio.domain.Borrow;
 
-import javax.validation.constraints.Pattern;
+import jakarta.validation.constraints.Pattern;
 
 @FunctionalInterface
 public interface ConsiderBorrowingABook {
-    void considerBorrowingABook(CreateBorrowCmd createBorrowCmd);
+    Borrow considerBorrowingABook(CreateBorrowCmd createBorrowCmd);
 
 
     @Getter

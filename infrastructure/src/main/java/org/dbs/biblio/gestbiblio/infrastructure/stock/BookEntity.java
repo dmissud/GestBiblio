@@ -1,6 +1,6 @@
 package org.dbs.biblio.gestbiblio.infrastructure.stock;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;

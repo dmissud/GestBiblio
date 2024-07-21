@@ -40,7 +40,7 @@ public class ConfigurationApplication {
                 External: \t{}://{}:{}{}
                 Profile(s): \t{}
                 --------------------------------------------------
-                        """,
+                       \s""",
                 environment.getProperty("application.name", "as noName"),
                 environment.getProperty("application.version", "VO.O.O"),
                 protocol, serverPort, contextPath,

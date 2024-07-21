@@ -1,0 +1,188 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1721590740081-1
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_biblio_entity
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: last_copy_book_identifiant
+                  type: INT
+            tableName: biblio_entity
+  - changeSet:
+      id: 1721590740081-2
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book_copy_entity
+                  name: id
+                  type: UUID
+              - column:
+                  constraints:
+                    nullable: false
+                  name: available
+                  type: BOOLEAN
+              - column:
+                  name: identifiant
+                  type: VARCHAR(255)
+              - column:
+                  name: book_entity_id
+                  type: UUID
+            tableName: book_copy_entity
+  - changeSet:
+      id: 1721590740081-3
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book_entity
+                  name: id
+                  type: UUID
+              - column:
+                  name: isbn13
+                  type: VARCHAR(255)
+              - column:
+                  name: titre
+                  type: VARCHAR(255)
+            tableName: book_entity
+  - changeSet:
+      id: 1721590740081-4
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book_entity_bookcopyentities
+                  name: book_entity_id
+                  type: UUID
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book_entity_bookcopyentities
+                  name: book_copy_entities_id
+                  type: UUID
+            tableName: book_entity_book_copy_entities
+  - changeSet:
+      id: 1721590740081-5
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_isbnentity
+                  name: isbn13
+                  type: VARCHAR(255)
+              - column:
+                  name: titre
+                  type: VARCHAR(255)
+              - column:
+                  name: auteur
+                  type: VARCHAR(255)
+              - column:
+                  name: editeur
+                  type: VARCHAR(255)
+              - column:
+                  name: date
+                  type: VARCHAR(255)
+              - column:
+                  name: langue
+                  type: VARCHAR(255)
+              - column:
+                  name: prix
+                  type: VARCHAR(255)
+            tableName: isbn_entity
+  - changeSet:
+      id: 1721590740081-6
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: identifiant
+            constraintName: uc_book_copy_entity_identifiant
+            tableName: book_copy_entity
+  - changeSet:
+      id: 1721590740081-7
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: book_copy_entities_id
+            constraintName: uc_book_entity_book_copy_entities_bookcopyentities
+            tableName: book_entity_book_copy_entities
+  - changeSet:
+      id: 1721590740081-8
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: isbn13
+            indexName: isbn_idx
+            tableName: book_entity
+            unique: true
+  - changeSet:
+      id: 1721590740081-9
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_entity_id
+            baseTableName: book_copy_entity
+            constraintName: FK_BOOK_COPY_ENTITY_ON_BOOK_ENTITY
+            referencedColumnNames: id
+            referencedTableName: book_entity
+  - changeSet:
+      id: 1721590740081-10
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_copy_entities_id
+            baseTableName: book_entity_book_copy_entities
+            constraintName: fk_booentboocopent_on_book_copy_entity
+            referencedColumnNames: id
+            referencedTableName: book_copy_entity
+  - changeSet:
+      id: 1721590740081-11
+      author: gitpod
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_entity_id
+            baseTableName: book_entity_book_copy_entities
+            constraintName: fk_booentboocopent_on_book_entity
+            referencedColumnNames: id
+            referencedTableName: book_entity
+
