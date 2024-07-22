@@ -1,4 +1,4 @@
-package org.dbs.biblio.gestbiblio.configuration;
+package org.dbs.biblio.gestbiblio;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -29,18 +29,18 @@ public class ConfigurationApplication {
             protocol = "https";
         }
         final String serverPort = Optional.ofNullable(environment.getProperty("server.port")).orElse(HTTP_DEFAULT_PORT);
-        final String contextPath =  Optional.ofNullable(environment.getProperty("server.servlet.context-path")).orElse("/");
+        final String contextPath = Optional.ofNullable(environment.getProperty("server.servlet.context-path")).orElse("/");
         final String hostAddress = InetAddress.getLocalHost().getHostAddress();
 
         log.info("""
-                --------------------------------------------------
-                Application '{} ({}) is runnning !
-                Access URLs:
-                Local: \t{}://localhost:{}{}
-                External: \t{}://{}:{}{}
-                Profile(s): \t{}
-                --------------------------------------------------
-                       \s""",
+                        --------------------------------------------------
+                        Application '{} ({}) is runnning !
+                        Access URLs:
+                        Local: \t{}://localhost:{}{}
+                        External: \t{}://{}:{}{}
+                        Profile(s): \t{}
+                        --------------------------------------------------
+                               \s""",
                 environment.getProperty("application.name", "as noName"),
                 environment.getProperty("application.version", "VO.O.O"),
                 protocol, serverPort, contextPath,

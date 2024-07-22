@@ -47,6 +47,7 @@
         <sonar.projectKey>dmissud_GestBiblio</sonar.projectKey>
         <sonar.organization>dmissud</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <springdoc-openapi-ui.version>2.6.0</springdoc-openapi-ui.version>
     </properties>
 
     <!-- =============================================================== -->
@@ -101,24 +102,24 @@
                 <scope>import</scope>
             </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>io.cucumber</groupId>-->
-<!--                <artifactId>cucumber-java</artifactId>-->
-<!--                <version>${cucumber.version}</version>-->
-<!--                <scope>test</scope>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.cucumber</groupId>-->
-<!--                <artifactId>cucumber-junit-platform-engine</artifactId>-->
-<!--                <version>${cucumber.version}</version>-->
-<!--                <scope>test</scope>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.cucumber</groupId>-->
-<!--                <artifactId>cucumber-spring</artifactId>-->
-<!--                <version>${cucumber.version}</version>-->
-<!--                <scope>test</scope>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.cucumber</groupId>-->
+            <!--                <artifactId>cucumber-java</artifactId>-->
+            <!--                <version>${cucumber.version}</version>-->
+            <!--                <scope>test</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.cucumber</groupId>-->
+            <!--                <artifactId>cucumber-junit-platform-engine</artifactId>-->
+            <!--                <version>${cucumber.version}</version>-->
+            <!--                <scope>test</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.cucumber</groupId>-->
+            <!--                <artifactId>cucumber-spring</artifactId>-->
+            <!--                <version>${cucumber.version}</version>-->
+            <!--                <scope>test</scope>-->
+            <!--            </dependency>-->
             <!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
             <dependency>
                 <groupId>org.mockito</groupId>
@@ -127,13 +128,13 @@
                 <scope>test</scope>
             </dependency>
 
-<!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.assertj/assertj-core &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>org.assertj</groupId>-->
-<!--                <artifactId>assertj-core</artifactId>-->
-<!--                <version>3.23.1</version>-->
-<!--                <scope>test</scope>-->
-<!--            </dependency>-->
+            <!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.assertj/assertj-core &ndash;&gt;-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.assertj</groupId>-->
+            <!--                <artifactId>assertj-core</artifactId>-->
+            <!--                <version>3.23.1</version>-->
+            <!--                <scope>test</scope>-->
+            <!--            </dependency>-->
 
 
             <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
@@ -141,6 +142,11 @@
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
 
         </dependencies>
