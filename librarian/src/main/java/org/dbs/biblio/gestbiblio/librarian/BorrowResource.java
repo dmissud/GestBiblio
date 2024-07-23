@@ -7,24 +7,21 @@ import org.springframework.hateoas.Link;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/librarian")
+@RequestMapping("/api/documentalist")
 @Tag(name = "Borrows", description = "Endpoints related to borrows operations")
-public class BorrowEndPoint {
+public class BorrowResource {
 
     private final ConsiderBorrowingABook considerBorrowingABook;
 
-    public BorrowEndPoint(ConsiderBorrowingABook considerBorrowingABook) {
+    public BorrowResource(ConsiderBorrowingABook considerBorrowingABook) {
         this.considerBorrowingABook = considerBorrowingABook;
     }
 
-    @PostMapping("/borrows")
-    public ResponseEntity<EntityModel<Borrow>> borrowABook(@RequestParam String memberId, @RequestParam String bookCopyId) {
+    @PostMapping("/borrows/member/{memberId}/bookCopy/{bookCopyId}/create")
+    public ResponseEntity<EntityModel<Borrow>> borrowABook(@PathVariable String bookCopyId, @PathVariable String memberId) {
         Borrow borrow = this.considerBorrowingABook.considerBorrowingABook(ConsiderBorrowingABook.CreateBorrowCmd.builder()
                 .idMember(memberId)
                 .idCopy(bookCopyId)

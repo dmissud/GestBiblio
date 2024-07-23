@@ -10,7 +10,7 @@
     <artifactId>librarian</artifactId>
 
     <name>librarian</name>
-    <description>librarian</description>
+    <description>librarian should manage the book's stock</description>
     <url/>
     <licenses>
         <license/>
@@ -59,6 +59,10 @@
         <dependency>
             <groupId>org.springframework.hateoas</groupId>
             <artifactId>spring-hateoas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.dbs.biblio</groupId>
+            <artifactId>infrastructure</artifactId>
         </dependency>
     </dependencies>
 </project>

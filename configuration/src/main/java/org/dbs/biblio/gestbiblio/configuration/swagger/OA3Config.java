@@ -10,10 +10,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OA3Config {
     @Bean
-    public GroupedOpenApi userApi() {
+    public GroupedOpenApi librarianApi() {
         return GroupedOpenApi.builder()
                 .group("Librarian")
                 .pathsToMatch("/api/librarian/**")
+                .build();
+    }
+    @Bean
+    public GroupedOpenApi documentalistApi() {
+        return GroupedOpenApi.builder()
+                .group("Documentalist")
+                .pathsToMatch("/api/documentalist/**")
                 .build();
     }
 }

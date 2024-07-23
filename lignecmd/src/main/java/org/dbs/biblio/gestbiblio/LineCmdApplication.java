@@ -8,10 +8,10 @@ import org.springframework.cache.annotation.EnableCaching;
 @SpringBootApplication
 @Slf4j
 @EnableCaching
-public class LigneCmdApplication {
+public class LineCmdApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LigneCmdApplication.class);
+        SpringApplication.run(LineCmdApplication.class);
     }
 
 }
