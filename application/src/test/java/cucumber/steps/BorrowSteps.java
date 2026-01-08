@@ -120,4 +120,9 @@ public class BorrowSteps {
     public void lEmpruntEstImpossible() {
         Assertions.assertEquals("Le livre n'est pas disponible", this.businessException.getMessage());
     }
+
+    @Then("l&#39;exemplaire  {string} n&#39;est plus disponible")
+    public void l_exemplaire_n_est_plus_disponible(String s) {
+        // Write code here that turns the phrase above into concrete actions
+    }
 }

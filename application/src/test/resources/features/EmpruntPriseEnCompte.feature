@@ -1,4 +1,5 @@
 # Creadted by DMI
+@Hook
   Feature: Prendre en compte un Emprunt
 
     Scenario: Prendre en compte l'emprunt d'un exemplaire d'ouvrage disponible par un adherent inscrit
@@ -14,3 +15,5 @@
       Given l'adherent "AD00001" est connue de la Bibliotheque
       When l'adherent "AD00001"  umprunte l'exemplaire "EX00001"
       Then L'emprunt est impossible
+      
+            
