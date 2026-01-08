@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+/application/src/test/resources/.cucumber+/cucumber+.default.css
+/application/src/test/resources/.cucumber+/cucumber+.default.properties
+/application/src/test/resources/.cucumber+/cucumber+.font.default.ttf
+/application/src/test/resources/.cucumber+/cucumber+.picture.default.svg
+/application/src/test/resources/.cucumber+/cucumber+.properties
+/application/src/test/resources/.cucumber+/cucumber+.template.default.ftl
+/GestBiblio.code-workspace
